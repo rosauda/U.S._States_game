@@ -4,6 +4,7 @@ from turtle import Turtle
 from scoreboard import Scoreboard
 
 screen = turtle.Screen()
+screen.setup(width=800, height=600)
 scoreboard = Scoreboard()
 screen.title("U.S. States Game")
 image = "blank_states_img.gif"
@@ -23,7 +24,7 @@ while count < 50:
     screen.update()
     answer_state = screen.textinput(title="Guess the state", prompt="What`s another state`s name?").title()
 
-    # If user type "exit" new csv will generated containing all the states that the uses did not guess
+    # If user type "exit" new csv will generate containing all the states that the uses did not guess
     if answer_state == "Exit":
         all_states = df.state.to_list()
         missing_states_list = list(set(all_states).difference(states_list))
